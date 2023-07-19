@@ -104,7 +104,10 @@ string substr(int pos=0, int n=npos) const;		//返回pos开始n个字符组成�
 #### vector构造函数
 
 ```c++
-
+vector<T> v;		//采用模板实现，默认构造函数
+vector(v.begin(), v.end());		//将v[begin(),end())区间中元素拷贝
+vector(n, elem);		//构造函数将n个elem拷贝
+vector(const vector &vec);		//拷贝构造函数
 ```
 
 
@@ -112,7 +115,9 @@ string substr(int pos=0, int n=npos) const;		//返回pos开始n个字符组成�
 #### vector赋值操作
 
 ```c++
-
+vector& operator=(const vector &vec);		//重载=
+vector& assign(begin, end);
+vector& assign(n, elem);
 ```
 
 
@@ -122,35 +127,48 @@ string substr(int pos=0, int n=npos) const;		//返回pos开始n个字符组成�
 ##### 容量和大小
 
 ```c++
-
+empty();		//判断是否为空
+capacity();		//容量大小
+size();		//元素个数
+resize(int num);		//重新指定容器长度为num，若容器变长，以默认值填充，变短则删除超出部分
+resize(int num, elem);		//resize重载，容器变长时以elem填充
 ```
 
 ##### 插入
 
 ```c++
-
+push_back(elem);		//尾插
+pop_back();		//删除最后一个元素
+insert(const_iterator pos, elem);		//迭代器指向位置pos处插入elem
+insert(const_iterator pos, int count, elem);		//迭代器指向位置pos处插入count个elem
 ```
 
 ##### 删除
 
 ```c++
-
+erase(const_iterator pos);		//删除pos指向元素
+erase(const_iterator start, const_iterator end);		//删除start-end之间元素
+clear();		//删除所有元素
 ```
 
 ##### 存取
 
 ```c++
-
+at(int idx);		//返回idx指向元素
+operator[];		//[]重载
+front();		//返回第一个元素
+back();		//返回最后一个元素
 ```
 
 ##### 互换
 
 ```c++
-
+swap(vec);		//vec与本身元素互换
+vector<T>(v).swap(v)		//创建匿名对象与自身互换收缩内存
 ```
 
 ##### 预留
 
 ```c++
-
+reserve(int len);		//预留len个元素长度，不初始化，不可访问
 ```
