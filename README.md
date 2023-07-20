@@ -436,16 +436,10 @@ find(key);		//若存在，返回元素的迭代器，若不存在，返回set.en
 count(key);
 ```
 
-##### 对组
-
-```c++
-
-```
-
 ##### 排序
 
 ```c++
-
+set<T,class cls> st;		//利用cls中仿函数指定排序规则
 ```
 
 ##### 交换
@@ -460,66 +454,68 @@ swap(st);
 
 #### 区别
 
-
+map不允许容器中有重复key值元素，multimap允许存在重复key值元素
 
 #### map构造函数
 
 ```c++
-
+map<T1, T2> mp;
+map(const map &mp);
 ```
-
-
 
 #### map赋值操作
 
 ```c++
-
+map& operator=(const map &mp);
 ```
-
-
 
 #### map常用接口
 
 ##### 大小
 
 ```c++
-
+size();
+empty();
 ```
 
 ##### 插入
 
 ```c++
-
+insert(elem);
+m[key]=value;		//重载[]，key不存在时插入，未指定value时为0
 ```
 
 ##### 删除
 
 ```c++
-
+erase(pos);
+erase(begin, end);
+erase(key);		//指定key值元素删除
+clear();
 ```
 
 ##### 查找
 
 ```c++
-
+find(key);
 ```
 
 ##### 统计
 
 ```c++
-
+count(key);
 ```
 
 ##### 排序
 
 ```c++
-
+map<T1, T2, class cls> mp;		//cls中仿函数指定排序规则
 ```
 
 ##### 交换
 
 ```c++
-
+swap(mp);
 ```
 
 
