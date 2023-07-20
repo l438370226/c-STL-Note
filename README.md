@@ -251,7 +251,8 @@ sort(iterator begin, iterator end);
 #### stack构造函数
 
 ```c++
-
+stack<T> stk;
+stack(const stack &stk);
 ```
 
 
@@ -259,7 +260,7 @@ sort(iterator begin, iterator end);
 #### stack赋值操作
 
 ```c++
-
+stack& operator=(const stack &stk);
 ```
 
 
@@ -269,13 +270,16 @@ sort(iterator begin, iterator end);
 ##### 大小
 
 ```c++
-
+empty();
+size();
 ```
 
 ##### 存取
 
 ```c++
-
+push(elem);
+pop();
+top();
 ```
 
 
@@ -285,7 +289,8 @@ sort(iterator begin, iterator end);
 #### queue构造函数
 
 ```c++
-
+queue<T> que;
+queue(const queue &que);
 ```
 
 
@@ -293,7 +298,7 @@ sort(iterator begin, iterator end);
 #### queue赋值操作
 
 ```c++
-
+queue& operator=(const queue &que);
 ```
 
 
@@ -303,13 +308,17 @@ sort(iterator begin, iterator end);
 ##### 大小
 
 ```c++
-
+empty();
+size();
 ```
 
 ##### 存取
 
 ```c++
-
+push(elem);		//入队
+pop();		//出队
+back();		//队尾元素
+front();		//队头元素
 ```
 
 
