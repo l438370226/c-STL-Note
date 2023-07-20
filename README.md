@@ -180,7 +180,10 @@ reserve(int len);		//预留len个元素长度，不初始化，不可访问
 #### deque构造函数
 
 ```c++
-
+deque<T> deq;
+deque(begin, end);
+deque(n, elem);
+deque(const deque &deq);
 ```
 
 
@@ -188,7 +191,9 @@ reserve(int len);		//预留len个元素长度，不初始化，不可访问
 #### deque赋值操作
 
 ```c++
-
+deque& operator=(const deque &deq);
+deque& assign(begin, end);
+deque& assign(n, elem);
 ```
 
 
@@ -198,31 +203,45 @@ reserve(int len);		//预留len个元素长度，不初始化，不可访问
 ##### 大小
 
 ```c++
-
+empty();
+size();
+resize(num);
+resize(num, elem);
 ```
 
 ##### 插入
 
 ```c++
-
+push_back(elem);		//尾插
+push_front(elem);		//头插
+insert(pos, elem);		//指定位置pos处插入
+insert(pos, n, elem);
+insert(pos, begin, end);		//在pos处插入[begin,end)元素
 ```
 
 ##### 删除
 
 ```c++
-
+pop_back();		//尾删
+pop_front();		//头删
+erase(pos);
+erase(begin, end);
+clear();
 ```
 
 ##### 存取
 
 ```c++
-
+operator[];
+at(int idx);
+front();
+back();
 ```
 
 ##### 排序
 
 ```c++
-
+sort(iterator begin, iterator end);
 ```
 
 
