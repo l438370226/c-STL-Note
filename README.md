@@ -226,12 +226,6 @@ front();
 back();
 ```
 
-##### 排序
-
-```c++
-sort(iterator begin, iterator end);		//全局函数
-```
-
 
 
 ### stack
@@ -520,6 +514,93 @@ swap(mp);
 
 
 
+## 内建仿函数
+
+### 算术仿函数
+
+```c++
+template<class T> T plus<T>;		//加法
+template<class T> T minus<T>;		//减法
+template<class T> T multiplies<T>;		//乘法
+template<class T> T divides<T>;		//除法
+template<class T> T modulus<T>;		//取模
+template<class T> T negate<T>;		//取反
+```
+
+### 关系仿函数
+
+```c++
+template<class T> bool equal_to<T>;
+template<class T> bool no_equal_to<T>;
+template<class T> bool greater<T>;
+template<class T> bool greater_equal<T>;
+template<class T> bool less<T>;
+template<class T> bool less_equal<T>;
+```
+
+### 逻辑仿函数
+
+```c++
+template<class T> bool logical_and<T>;
+template<class T> bool logical_or<T>;
+template<class T> bool logical_not<T>;
+```
+
 ## 常用算法
 
-### 
+### 常用遍历算法
+
+```c++
+for_each(iterator begin, iterator end, _func);		//_func为函数或函数对象
+transform(iterator begin1, iterator end1, iteratoor begin2, _func);		//begin1原容器开始迭代器，begin2目标容器开始迭代器
+```
+
+### 常用查找算法
+
+```c++
+find(iterator begin, iterator end, value);		//自定义数据类型需要重载'=='
+find_if(iterator begin, iterator end, _Pred);		//_Pred函数或谓词(返回bool类仿函数)
+adjacent_find(iterator begin, iterator end);		//查找相邻重复元素
+bool binary_search(iterator begin, iterator end, value);		//二分查找，要求有序
+count(iterator begin, iterator end, value);
+count_if(iterator begin, iterator end, _Pred);
+```
+
+### 常用排序算法
+
+```c++
+sort(iterator begin, iterator end, _Pred);
+random_shuffle(iterator begin, iterator end);		//随机打乱
+merge(iterator begin1, iterator end1, iterator begin2, iterator end2, iterator dest);		//两个容器必须有序,合并储存到另一容器，dest为目标容器开始迭代器
+reverse(iterator begin, iterator end);
+```
+
+### 常用拷贝算法
+
+```c++
+copy(iterator begin, iterator end, iterator dest);
+```
+
+### 常用替换算法
+
+```c++
+replace(iterator begin, iterator end, oldvalue, newvalue);
+replace_if(iterator begin, iterator end, _Pred, newvalue);
+swap(container c1, container c2);
+```
+
+### 常用算数生成算法
+
+```c++
+accumulate(iterator begin, iterator end, value);		//value为起始累加值，计算value+区间内元素之和
+fill(iterator begin, iterator end, value);
+```
+
+### 常用集合算法
+
+```c++
+iterator set_intersection(interator begin1, interator end1, interator begin2, interator end2, interator dest);		//求交集,返回交集结束处迭代器
+iterator set_union(interator begin1, interator end1, interator begin2, interator end2, interator dest);		//求并集
+iterator set_difference(interator begin1, interator end1, interator begin2, interator end2, interator dest);		//求差集
+```
+
