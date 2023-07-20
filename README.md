@@ -13,8 +13,6 @@ string(const string &str);		//使用string对象初始化
 string(int n, char c);		//使用n个字符c初始化
 ```
 
-
-
 #### string赋值操作
 
 ```c++
@@ -26,8 +24,6 @@ string& assign(const char*s, int n);		//赋值为字符串s前n个字符
 string& assign(const string &s);
 string& assign(int n, char c);		//赋值为n个字符c
 ```
-
-
 
 #### string常用接口
 
@@ -110,8 +106,6 @@ vector(n, elem);		//构造函数将n个elem拷贝
 vector(const vector &vec);		//拷贝构造函数
 ```
 
-
-
 #### vector赋值操作
 
 ```c++
@@ -119,8 +113,6 @@ vector& operator=(const vector &vec);		//重载=
 vector& assign(begin, end);
 vector& assign(n, elem);
 ```
-
-
 
 #### vector常用接口
 
@@ -186,8 +178,6 @@ deque(n, elem);
 deque(const deque &deq);
 ```
 
-
-
 #### deque赋值操作
 
 ```c++
@@ -195,8 +185,6 @@ deque& operator=(const deque &deq);
 deque& assign(begin, end);
 deque& assign(n, elem);
 ```
-
-
 
 #### deque常用接口
 
@@ -241,7 +229,7 @@ back();
 ##### 排序
 
 ```c++
-sort(iterator begin, iterator end);
+sort(iterator begin, iterator end);		//全局函数
 ```
 
 
@@ -255,15 +243,11 @@ stack<T> stk;
 stack(const stack &stk);
 ```
 
-
-
 #### stack赋值操作
 
 ```c++
 stack& operator=(const stack &stk);
 ```
-
-
 
 #### stack常用接口
 
@@ -293,15 +277,11 @@ queue<T> que;
 queue(const queue &que);
 ```
 
-
-
 #### queue赋值操作
 
 ```c++
 queue& operator=(const queue &que);
 ```
-
-
 
 #### queue常用接口
 
@@ -323,66 +303,80 @@ front();		//队头元素
 
 
 
-### list
+### list		//双向循环链表
 
 #### list构造函数
 
 ```c++
-
+list<T> lst;
+list(begin, end);
+list(n, elem);
+list(const list &lst);
 ```
-
-
 
 #### list赋值操作
 
 ```c++
-
+list& operator=(const list &lst);
+list& assign(begin, end);
+list& assign(n, elem);
 ```
-
-
 
 #### list常用接口
 
 ##### 大小
 
 ```c++
-
+size();
+empty();
+resize(num);
+resize(num, elem);
 ```
 
 ##### 插入
 
 ```c++
-
+push_back(elem);
+push_front(elem);
+insert(pos, elem);
+insert(pos, n, elem);
+insert(pos, begin, end);
 ```
 
 ##### 删除
 
 ```c++
-
+pop_back();
+pop_front();
+erase(begin, end);
+erase(pos);
+remove(elem);		//删除容器中所有与elem值匹配的元素
+clear();
 ```
 
 ##### 存取
 
 ```c++
-
+front();
+back();
 ```
 
 ##### 反转
 
 ```c++
-
+reverse();
 ```
 
 ##### 排序
 
 ```c++
-
+sort();		//成员函数，可指定规则
 ```
 
 ##### 交换
 
 ```c++
-
+swap(list);
 ```
 
 
@@ -391,54 +385,55 @@ front();		//队头元素
 
 #### 区别
 
-
+set不允许有重复元素，multiset允许重复
 
 #### set构造函数
 
 ```c++
-
+set<T> st;
+set(const set &st);
 ```
-
-
 
 #### set赋值操作
 
 ```c++
-
+set& operator=(const set &st);
 ```
-
-
 
 #### set常用接口
 
 ##### 大小
 
 ```c++
-
+size();
+empty();
 ```
 
 ##### 插入
 
 ```c++
-
+insert(elem);		//set返回<iterator,bool>数据，multiset返回iterator数据
 ```
 
 ##### 删除
 
 ```c++
-
+erase(pos);
+erase(begin, end);
+erase(elem);
+clear();
 ```
 
 ##### 查找
 
 ```c++
-
+find(key);		//若存在，返回元素的迭代器，若不存在，返回set.end()
 ```
 
 ##### 统计
 
 ```c++
-
+count(key);
 ```
 
 ##### 对组
@@ -456,7 +451,7 @@ front();		//队头元素
 ##### 交换
 
 ```c++
-
+swap(st);
 ```
 
 
