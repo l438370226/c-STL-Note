@@ -514,6 +514,74 @@ swap(mp);
 
 
 
+### unordered_map
+
+#### unordered_map构造函数
+
+```c++
+unordered_map<T1, T2> ump;
+unordered_map(begin, end);
+unordered_map(const unordered_map &ump);
+unordered_map(unordered_map&& ump);
+unordered_map({elemlist})
+```
+
+#### unordered_map赋值操作
+
+```c++
+unordered_map& operator(const unordered_map &ump);
+```
+
+#### unordered_map常用接口
+
+##### 大小
+
+```c++
+empty();
+size();
+max_size();
+```
+
+##### 插入
+
+```c++
+insert(elem);
+insert(Inputlt first, Inputlt last);
+insert(ilist);
+insert_or_assign(key, value);		//若等价于key的键值已存在，则赋值，否则插入
+```
+
+##### 删除
+
+```c++
+erase(pos);
+erase(begin, end);
+erase(key);
+clear();
+```
+
+##### 查找
+
+```c++
+at(key);
+T& operator[](key);
+find(key);
+```
+
+##### 统计
+
+```c++
+count(key);
+```
+
+##### 交换
+
+```c++
+swap(ump)
+```
+
+
+
 ## 内建仿函数
 
 ### 算术仿函数
